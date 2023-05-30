@@ -17,7 +17,7 @@ const Resetpassword = () => {
       
       const url = `api/v1/auth/password/reset/${token}`;
       try {
-        const resp = await axios.post(`http://localhost:4000/${url}`, {
+        const resp = await axios.post(`https://cloud-cart.up.railway.app/${url}`, {
           "password": password,
           "confirmPassword": confirmpassword
         });

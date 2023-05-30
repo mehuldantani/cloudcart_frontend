@@ -17,11 +17,12 @@ const Login = () => {
   const HandleSubmit = async (e)=>{
     e.preventDefault()
     try{
-      const resp = await axios.post("api/v1/auth/login",{
+      const resp = await axios.post("https://cloud-cart.up.railway.app/api/v1/auth/login",{
         "email": email,
         "password": password
       }
       );
+      console.log(resp)
       if (resp.status === 200 && resp.data.success) {
         setAuth({
           ...auth,

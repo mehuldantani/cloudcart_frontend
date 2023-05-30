@@ -23,7 +23,7 @@ const Createcoupon = () => {
     e.preventDefault()
 
     try{
-      const resp = await axios.post("http://localhost:4000/api/v1/coupon",{
+      const resp = await axios.post("https://cloud-cart.up.railway.app/api/v1/coupon",{
         "code":code,
         "discount":discount
       });
@@ -57,7 +57,7 @@ const Createcoupon = () => {
     e.preventDefault()
 
     try{
-      const resp = await axios.put(`http://localhost:4000/api/v1/coupon/${selected._id}`,{
+      const resp = await axios.put(`https://cloud-cart.up.railway.app/api/v1/coupon/${selected._id}`,{
         "code":updatedcode,
         "discount":updateddiscount
     });
@@ -88,7 +88,7 @@ const Createcoupon = () => {
   const handleDelete = async (itemid) => {
 
     try{
-      const resp = await axios.delete(`http://localhost:4000/api/v1/coupon/${itemid}`);
+      const resp = await axios.delete(`https://cloud-cart.up.railway.app/api/v1/coupon/${itemid}`);
       if (resp.status === 200 && resp.data.success) {
         
         toast.success(`${code} Deleted`);
@@ -111,7 +111,7 @@ const Createcoupon = () => {
   //get all categories
   const getAllCoupons = async () => {
     try {
-      const resp = await axios.get('http://localhost:4000/api/v1/coupon');
+      const resp = await axios.get('https://cloud-cart.up.railway.app/api/v1/coupon');
       if (resp.status === 200 && resp.data.success) {
         setCoupons(resp.data.coupons); // Set coupons directly without Object.entries()
       }

@@ -17,7 +17,7 @@ const Forgotpassword = () => {
     const HandleSubmit = async (e)=>{
       e.preventDefault()
       try{
-        const resp = await axios.post("api/v1/auth/password/forgot/",{
+        const resp = await axios.post("https://cloud-cart.up.railway.app/api/v1/auth/password/forgot/",{
             "email": email
         }
         );
