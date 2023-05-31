@@ -17,7 +17,7 @@ const Register = () => {
     const HandleSubmit = async (e)=>{
       e.preventDefault()
       try{
-        const resp = await axios.post("https://cloud-cart.up.railway.app/api/v1/auth/signup",{
+        const resp = await axios.post(`${process.env.REACT_APP_BASE_URL}api/v1/auth/signup`,{
             "name": name,
             "email": email,
             "password": password

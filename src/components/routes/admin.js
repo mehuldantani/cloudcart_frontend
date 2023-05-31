@@ -12,7 +12,7 @@ export default function AdminRoute(){
     useEffect(()=>{
         const authcheck = async()=>{
             try {
-                const res = await axios.post("https://cloud-cart.up.railway.app/api/v1/auth/admin-auth")
+                const res = await axios.post(`${process.env.REACT_APP_BASE_URL}api/v1/auth/admin-auth`)
 
                 if(res.data.ok){
                     setOk(true)

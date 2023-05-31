@@ -12,7 +12,7 @@ export default function PrivateRoute(){
     useEffect(()=>{
         
         const authcheck = async()=>{
-            const res = await axios.get("https://cloud-cart.up.railway.app/api/v1/auth/user-auth")
+            const res = await axios.get(`${process.env.REACT_APP_BASE_URL}api/v1/auth/user-auth`)
 
             if(res.data.ok){
                 setOk(true)

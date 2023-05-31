@@ -47,7 +47,7 @@ const Myorders = () => {
    //get all categories
    const getAllorders = async () => {
     try {
-      const resp = await axios.get(`https://cloud-cart.up.railway.app/api/v1/order/${auth.id}`);
+      const resp = await axios.get(`${process.env.REACT_APP_BASE_URL}api/v1/order/${auth.id}`);
       console.log(resp)
       if (resp.status === 200 && resp.data.success) {
         setOrders(resp.data)

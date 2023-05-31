@@ -23,7 +23,7 @@ const Createproduct = () => {
    //get all categories
    const getAllCategories = async () => {
     try {
-      const resp = await axios.get('https://cloud-cart.up.railway.app/api/v1/collection');
+      const resp = await axios.get(`${process.env.REACT_APP_BASE_URL}api/v1/collection`);
 
       if (resp.status === 200 && resp.data?.success) {
        setCategories(resp.data.allCollections); // Set categories directly without Object.entries()
@@ -55,7 +55,7 @@ const Createproduct = () => {
       newproduct.append('stock',stock)
       newproduct.append('files',photos)
 
-      const resp = await axios.post("https://cloud-cart.up.railway.app/api/v1/product",newproduct);
+      const resp = await axios.post(`${process.env.REACT_APP_BASE_URL}api/v1/product`,newproduct);
       console.log(resp)
       if (resp.status === 200 && resp.data.success) {
         

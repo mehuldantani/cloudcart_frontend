@@ -21,7 +21,7 @@ const Createcategory = () => {
     e.preventDefault()
 
     try{
-      const resp = await axios.post("https://cloud-cart.up.railway.app/api/v1/collection",{
+      const resp = await axios.post(`${process.env.REACT_APP_BASE_URL}api/v1/collection`,{
         "name": name
     }
       );
@@ -46,7 +46,7 @@ const Createcategory = () => {
     e.preventDefault()
 
     try{
-      const resp = await axios.post(`https://cloud-cart.up.railway.app/api/v1/collection/${selected._id}`,{
+      const resp = await axios.post(`${process.env.REACT_APP_BASE_URL}api/v1/collection/${selected._id}`,{
         "name": updatedname
     }
       );
@@ -72,7 +72,7 @@ const Createcategory = () => {
   const handleDelete = async (itemid) => {
 
     try{
-      const resp = await axios.delete(`https://cloud-cart.up.railway.app/api/v1/collection/${itemid}`);
+      const resp = await axios.delete(`${process.env.REACT_APP_BASE_URL}api/v1/collection/${itemid}`);
       if (resp.status === 200 && resp.data.success) {
         
         toast.success(`${name} Deleted`);
@@ -91,7 +91,7 @@ const Createcategory = () => {
   //get all categories
   const getAllCategories = async () => {
     try {
-      const resp = await axios.get('https://cloud-cart.up.railway.app/api/v1/collection');
+      const resp = await axios.get(`${process.env.REACT_APP_BASE_URL}api/v1/collection`);
 
       if (resp.status === 200 && resp.data.success) {
         console.log('req is true');

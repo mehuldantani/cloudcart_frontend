@@ -54,7 +54,7 @@ const HomePage = () => {
   //get all categories
   const getAllCategories = async () => {
     try {
-      const resp = await axios.get('https://cloud-cart.up.railway.app/api/v1/collection');
+      const resp = await axios.get(`${process.env.REACT_APP_BASE_URL}api/v1/collection`);
 
       if (resp.status === 200 && resp.data.success) {
         setCategories(resp.data.allCollections); // Set categories directly without Object.entries()
@@ -92,7 +92,7 @@ const HomePage = () => {
 
     try {
       console.log(args)
-      const resp = await axios.post('https://cloud-cart.up.railway.app/api/v1/product/filter-products',args);
+      const resp = await axios.post(`${process.env.REACT_APP_BASE_URL}api/v1/product/filter-products`,args);
 
       if (resp.status === 200 && resp.data?.success) {
         console.log('filtered',resp.data.products)

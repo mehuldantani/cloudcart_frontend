@@ -31,7 +31,7 @@ const Cart = () => {
     const calculateDiscount = async () => {
         
         try{
-            const resp = await axios.post("https://cloud-cart.up.railway.app/api/v1/coupon/getcoupondetails",{
+            const resp = await axios.post(`${process.env.REACT_APP_BASE_URL}api/v1/coupon/getcoupondetails`,{
                 "code":coupon
             });
             if (resp.data.coupon.length > 0) {
@@ -63,7 +63,7 @@ const Cart = () => {
             return newObject;
           });
         try{
-            const resp = await axios.post("https://cloud-cart.up.railway.app/api/v1/order/razorpay",{
+            const resp = await axios.post(`${process.env.REACT_APP_BASE_URL}api/v1/order/razorpay`,{
                 "products":productarray,
                 "couponCode":coupon
             }
@@ -117,7 +117,7 @@ const Cart = () => {
           "coupon":coupon,
           "amount":Math.floor(totalmrp - coupondiscount*totalmrp)
       };
-        const resp = await axios.post("https://cloud-cart.up.railway.app/api/v1/order",neworder);
+        const resp = await axios.post(`${process.env.REACT_APP_BASE_URL}api/v1/order`,neworder);
         if (resp.status === 200 && resp.data.success) {
           if(auth.role == 'ADMIN'){
             navigate('/dashboard/admin/orders');

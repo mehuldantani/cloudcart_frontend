@@ -15,7 +15,7 @@ const Header = () => {
   const HandleLougout = async (e)=>{
     e.preventDefault()
       try{
-        const resp = await axios.get("https://cloud-cart.up.railway.app/api/v1/auth/logout",null);
+        const resp = await axios.get(`${process.env.REACT_APP_BASE_URL}api/v1/auth/logout`,null);
         console.log(resp)
         if (resp.status === 200 && resp.data.success) {
           // show success message to the user
