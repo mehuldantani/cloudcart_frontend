@@ -10,7 +10,7 @@ const Products = () => {
 
   const getallproducts = async ()=>{
     try {
-      const resp = await axios.get('/api/v1/product');
+      const resp = await axios.get(`${process.env.REACT_APP_BASE_URL}api/v1/product`);
 
       if (resp.status === 200 && resp.data?.success) {
         setProducts(resp.data.products); // Set categories directly without Object.entries()
