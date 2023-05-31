@@ -7,14 +7,15 @@ import axios from 'axios'
 const Forgotpassword = () => {
 
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [name,setName] = useState("")
-
     const navigate = useNavigate();
 
+    const [isLoading, setIsLoading] = useState(false);
+    const [isError, setIsError] = useState(false);
   
     //handle submit
     const HandleSubmit = async (e)=>{
+      setIsLoading(true)
+      setIsError(false)
       e.preventDefault()
       try{
         const resp = await axios.post(`${process.env.REACT_APP_BASE_URL}api/v1/auth/password/forgot/`,{
@@ -28,11 +29,14 @@ const Forgotpassword = () => {
           navigate('/login')
           
         } else {
+          setIsLoading(false)
+          setIsError(true)
           // show error message to the user
           toast.error("Something Went Wrong.");
         }
       } catch(error){
-        console.log(error)
+        setIsLoading(false)
+        setIsError(true)
         toast.error("Something Went Wrong.")
       }
     }
@@ -54,7 +58,11 @@ const Forgotpassword = () => {
             required
           />
         </div>
-        <button type="submit" class="btn btn-primary w-100">Submit</button>
+        {isError && <p className='text-danger'><small>User not found.</small></p>}
+        <button type="submit" 
+        class="btn btn-primary w-100"
+        disabled={isLoading}
+        >{isLoading ? 'Sending Email' : 'Send Email'}</button>
       </form>
     </div>
   </div>

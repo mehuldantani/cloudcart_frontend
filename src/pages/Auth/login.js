@@ -10,11 +10,16 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [auth,setAuth] = useAuth();
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+
   const navigate = useNavigate();
   const location = useLocation();
 
   //handle submit
   const HandleSubmit = async (e)=>{
+    setIsLoading(true)
+    setIsError(false);
     e.preventDefault()
     try{
       const resp = await axios.post(`${process.env.REACT_APP_BASE_URL}api/v1/auth/login`,{
@@ -37,11 +42,14 @@ const Login = () => {
         toast.success("Login successful");
         navigate(location.state || '/')
       } else {
+        setIsLoading(false);
+        setIsError(true);
         // show error message to the user
         toast.error("Invalid email or password");
       }
     } catch(error){
-      console.log(error)
+      setIsLoading(false);
+      setIsError(true);
       toast.error("Something Went Wrong.")
     }
   }
@@ -75,7 +83,11 @@ const Login = () => {
               required
             />
           </div>
-          <button type="submit" class="btn btn-primary w-100">Submit</button>
+          {isError && <p className='text-danger'><small>Invalid Credentials</small></p>}
+          <button type="submit"
+          class="btn btn-primary w-100"
+          disabled = {isLoading}
+          >{isLoading ? 'Logging in...' : 'Login'}</button>
         </form>
         <div class="mt-3 text-center">
         <Link to='/register' className="singup">

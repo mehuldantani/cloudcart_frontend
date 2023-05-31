@@ -5,14 +5,16 @@ import {useNavigate,useParams} from 'react-router-dom'
 import axios from 'axios'
 
 const Resetpassword = () => {
-
+ 
     const [password, setPassword] = useState("");
     const [confirmpassword, setConfirmpassword] = useState("");
-    
+    const [isLoading, setIsLoading] = useState(false);
+
     const { token } = useParams();
     const navigate = useNavigate();
     //handle submit
     const HandleSubmit = async (e)=>{
+      setIsLoading(true)
       e.preventDefault()
       
       const url = `api/v1/auth/password/reset/${token}`;
@@ -27,10 +29,12 @@ const Resetpassword = () => {
           navigate('/login')
           toast.success("Password Reset Successfully");
         } else {
+          setIsLoading(false)
           // show error message to the user
           toast.error(resp.data.message);
         }
       } catch (error) {
+        setIsLoading(false)
         if (error.response && error.response.status === 400) {
           // handle error response with status code 400
           toast.error(error.response.data.message);
@@ -70,7 +74,10 @@ const Resetpassword = () => {
             required
           />
         </div>
-        <button type="submit" class="btn btn-primary w-100">Submit</button>
+        <button type="submit" 
+        class="btn btn-primary w-100"
+        disabled={isLoading}
+        >{isLoading ? 'Validating...' : 'Reset Password'}</button>
       </form>
     </div>
   </div>

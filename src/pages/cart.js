@@ -36,14 +36,15 @@ const Cart = () => {
             });
             if (resp.data.coupon.length > 0) {
               const discount = Number(resp.data.coupon[0].discount)/100;
-              console.log(discount)
               setCoupondiscount(discount)
               toast.success('Coupon Applied Successfully.');
             } else {
               // show error message to the user
               toast.error("Invalid Coupon Code");
+              setCoupondiscount(0)
             }
           } catch(error){
+            setCoupondiscount(0)
             if (error.response) {
               // handle error response with status code 400
               toast.error(error.response.data.message);

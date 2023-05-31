@@ -9,6 +9,7 @@ const Register = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [name,setName] = useState("")
+    const [isLoading, setIsLoading] = useState(false);
 
     const navigate = useNavigate();
 
@@ -16,6 +17,7 @@ const Register = () => {
     //handle submit
     const HandleSubmit = async (e)=>{
       e.preventDefault()
+      setIsLoading(true)
       try{
         const resp = await axios.post(`${process.env.REACT_APP_BASE_URL}api/v1/auth/signup`,{
             "name": name,
@@ -25,15 +27,16 @@ const Register = () => {
         );
         if (resp.status === 200 && resp.data.success) {
           // show success message to the user
-          //navigate('/contact')
+          navigate('/login')
           toast.success("User Created Successfully.");
           
         } else {
+          setIsLoading(false)
           // show error message to the user
           toast.error("Something Went Wrong.");
         }
       } catch(error){
-        console.log(error)
+        setIsLoading(false)
         toast.error("Something Went Wrong.")
       }
     }
@@ -77,7 +80,10 @@ const Register = () => {
             required
           />
         </div>
-        <button type="submit" class="btn btn-primary w-100">Submit</button>
+        <button type="submit" 
+        class="btn btn-primary w-100"
+        disabled={isLoading}
+        >{isLoading ? 'Registering...':'Register'}</button>
       </form>
       <div class="mt-3 text-center">
       <Link to='/login' className="signin">
