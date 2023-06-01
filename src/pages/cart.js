@@ -190,7 +190,7 @@ const Cart = () => {
             type="text"
             name="coupon"
             placeholder='Enter Coupon Code'
-            className='form-control m-2'
+            className='form-control m-2 text-uppercase'
             value={coupon}
             onChange={(e)=> setCoupon(e.target.value)}
             style={{ width: "15rem", marginRight: "10px" }}

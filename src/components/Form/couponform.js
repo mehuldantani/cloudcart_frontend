@@ -7,7 +7,7 @@ const Couponform = ({HandleSubmit,value,setValue,discount,setDiscount}) => {
         <div className="form-group w-50">
             <input
             type="text"
-            className="form-control"
+            className="form-control text-uppercase"
             placeholder="Enter Coupon Code"
             value={value}
             onChange={(e) =>{
