@@ -10,6 +10,7 @@ const Register = () => {
     const [password, setPassword] = useState("");
     const [name,setName] = useState("")
     const [isLoading, setIsLoading] = useState(false);
+    const [isError, setIsError] = useState(false);
 
     const navigate = useNavigate();
 
@@ -18,6 +19,7 @@ const Register = () => {
     const HandleSubmit = async (e)=>{
       e.preventDefault()
       setIsLoading(true)
+      setIsError(false)
       try{
         const resp = await axios.post(`${process.env.REACT_APP_BASE_URL}api/v1/auth/signup`,{
             "name": name,
@@ -25,6 +27,7 @@ const Register = () => {
             "password": password
         }
         );
+        console.log(resp)
         if (resp.status === 200 && resp.data.success) {
           // show success message to the user
           navigate('/login')
@@ -32,11 +35,13 @@ const Register = () => {
           
         } else {
           setIsLoading(false)
+          setIsError(true)
           // show error message to the user
           toast.error("Something Went Wrong.");
         }
       } catch(error){
         setIsLoading(false)
+        setIsError(true)
         toast.error("Something Went Wrong.")
       }
     }
@@ -80,6 +85,7 @@ const Register = () => {
             required
           />
         </div>
+        {isError && <p className='text-danger'><small>Something went wrong</small></p>}
         <button type="submit" 
         class="btn btn-primary w-100"
         disabled={isLoading}
