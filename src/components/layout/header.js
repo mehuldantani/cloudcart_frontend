@@ -43,83 +43,69 @@ const Header = () => {
 
   return (
     <>
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    <div className="brand">
-    <Link to="/" className="navbar-brand">
-      <HiShoppingCart style={{ fontSize: "40px" }} /> CloudCart
-    </Link>
-    </div>
-  <button
-    className="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarText"
-    aria-controls="navbarText"
-    aria-expanded="true"
-    aria-label="Toggle navigation"
-  >
-    <span className="navbar-toggler-icon" />
-  </button>
-  <div className="collapse navbar-collapse" id="navbarText">
-    <ul className="navbar-nav ms-auto">
-      <li className="nav-item">
-        <NavLink to="/asd" className="nav-link">
-          Categories
-        </NavLink>
-      </li>
-      {auth.user ? (
-  <>
-    <li className="nav-item dropdown">
-      <NavLink
-        className="nav-link dropdown-toggle"
-        href="#"
-        role="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
+    <nav className="navbar navbar-expand-lg navbar-light">
+      <div className="brand ">
+      <Link to="/" className="navbar-brand navbar-custom">
+        <HiShoppingCart style={{ fontSize: "40px",color:'white' }} /> CloudCart
+      </Link>
+      </div>
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarText"
+        aria-controls="navbarText"
+        aria-expanded="true"
+        aria-label="Toggle navigation"
       >
-        {auth.user}
-      </NavLink>
-      <ul className="dropdown-menu">
-        <li>
-          <NavLink
-            to={`/dashboard/${auth?.role === 'ADMIN' ? "admin" : "user"}`}
-            className="dropdown-item"
-          >
-            Dashboard
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/login"
-            onClick={HandleLougout}
-            className="dropdown-item"
-          >
-            Logout
-          </NavLink>
-        </li>
-      </ul>
-    </li>
-  </>
-) : (
-  <>
-    <li className="nav-item">
-      <NavLink to="/login" className="nav-link">
-        Login
-      </NavLink>
-    </li>
-  </>
-)}
-      <li className="nav-item">
-        <NavLink to="/cart" className="nav-link">
-        <span className="position-relative">
-          Cart <span className="badge badge-pill badge-secondary cart-badge">{cart.length}</span>
-        </span>
-        </NavLink>
-      </li>
-    </ul>
-  </div>
-</nav>
-
+        <span className="navbar-toggler-icon" />
+      </button>
+      <div className="collapse navbar-collapse" id="navbarText">
+        <ul className="navbar-nav ms-auto">
+          <li className="nav-item">
+            <NavLink to="/asd" className="nav-link navbar-custom">
+              Categories
+            </NavLink>
+          </li>
+          <li className="nav-item dropdown">
+              <NavLink
+                className="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style={{color:"white"}}
+              >
+                {auth.user}
+              </NavLink>
+              <ul className="dropdown-menu">
+                <li>
+                  <NavLink
+                    to={`/dashboard/${auth?.role === 'ADMIN' ? "admin" : "user"}`}
+                    className="dropdown-item"
+                  >
+                    Dashboard
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/login"
+                    onClick={HandleLougout}
+                    className="dropdown-item"
+                  >
+                    Logout
+                  </NavLink>
+                </li>
+              </ul>
+            </li>
+          <li className="nav-item">
+            <NavLink to="/cart" className="nav-link navbar-custom">
+            <span className="position-relative">
+              Cart <span className="badge badge-pill badge-secondary cart-badge">{cart.length}</span>
+            </span>
+            </NavLink>
+          </li>
+        </ul>
+      </div>
+    </nav>
     </>
   )
 }
