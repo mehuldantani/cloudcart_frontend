@@ -10,6 +10,7 @@ const Couponform = ({HandleSubmit,value,setValue,discount,setDiscount}) => {
             className="form-control text-uppercase"
             placeholder="Enter Coupon Code"
             value={value}
+            style={{width:"300px"}}
             onChange={(e) =>{
                 setValue(e.target.value)
             }}
@@ -19,6 +20,7 @@ const Couponform = ({HandleSubmit,value,setValue,discount,setDiscount}) => {
             className="form-control mt-2"
             placeholder="Discount percentage"
             value={discount}
+            style={{width:"300px"}}
             onChange={(e) =>{
               setDiscount(Math.max(0, Math.min(e.target.value, 100)));
               }}

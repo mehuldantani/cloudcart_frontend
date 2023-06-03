@@ -62,11 +62,11 @@ const Login = () => {
           <h4 className="cool-animation">Shop like a pro, effortlessly.</h4>
         </div>
       </div>
-    <div className="container d-flex align-items-center vh-100">
+    <div className="container d-flex justify-content-center align-items-center vh-100">
       <div className="p-3 m-3" style={{ width: '350px' }}>
         <form onSubmit={HandleSubmit}>
           <div className="mb-3">
-            <label for="exampleloginEmail1" className="form-label">Email address</label>
+            <label for="exampleloginEmail1" className="form-label">Email</label>
             <input 
               type="email" 
               className="form-control" 
@@ -93,7 +93,8 @@ const Login = () => {
           <button type="submit"
           className="btn btn-primary w-100"
           disabled = {isLoading}
-          >{isLoading ? 'Logging in...' : 'Login'}</button>
+          >{isLoading ? (<div class="spinner-border" role="status"/>) : 'Login'}
+          </button>
         </form>
         <div className='d-flex justify-content-between'>
         <div className="mt-3 text-center">

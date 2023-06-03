@@ -49,7 +49,7 @@ const Forgotpassword = () => {
           <h4 className="cool-animation">Shop like a pro, effortlessly.</h4>
         </div>
       </div>
-    <div class="container d-flex align-items-center vh-100">
+    <div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="p-3 m-3" style={{ width: '350px' }}>
       <h2 class="text-center mb-4">Forgot Password</h2>
       <form onSubmit={HandleSubmit}>
@@ -69,7 +69,7 @@ const Forgotpassword = () => {
         <button type="submit" 
         class="btn btn-primary w-100"
         disabled={isLoading}
-        >{isLoading ? 'Sending Email' : 'Send Email'}</button>
+        >{isLoading ? (<div class="spinner-border" role="status"/>) : 'Send Email'}</button>
       </form>
       <div class="mt-3 text-center">
       <Link to='/login' className="signin" style={{ fontSize: '13px', textDecoration: 'none' }}>

@@ -10,6 +10,7 @@ const CategoryForm = ({HandleSubmit,value,setValue}) => {
             className="form-control"
             placeholder="Enter Category"
             value={value}
+            style={{width:"450px"}}
             onChange={(e) =>{
                 setValue(e.target.value)
             }}
