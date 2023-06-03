@@ -91,6 +91,7 @@ const Cart = () => {
             "handler": function (response){
                 toast.success("Payment Successfull")
                 setCart([])
+                localStorage.setItem('cart',[])
                 generateOrder(id);
             },
             "theme": {

@@ -43,7 +43,7 @@ const Header = () => {
 
   return (
     <>
-    <nav className="navbar navbar-expand-lg navbar-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-primary">
       <div className="brand ">
       <Link to="/" className="navbar-brand navbar-custom">
         <HiShoppingCart style={{ fontSize: "40px",color:'white' }} /> CloudCart
