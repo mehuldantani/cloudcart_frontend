@@ -1,7 +1,7 @@
 import Layout from '../../components/layout/layout.js';
 import toast from 'react-hot-toast';
 import {React,useState} from 'react';
-import {useNavigate} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
 import axios from 'axios'
 
 const Forgotpassword = () => {
@@ -50,7 +50,7 @@ const Forgotpassword = () => {
         </div>
       </div>
     <div class="container d-flex align-items-center vh-100">
-    <div class="p-3 m-3">
+    <div class="p-3 m-3" style={{ width: '350px' }}>
       <h2 class="text-center mb-4">Forgot Password</h2>
       <form onSubmit={HandleSubmit}>
         <div class="mb-3">
@@ -71,6 +71,11 @@ const Forgotpassword = () => {
         disabled={isLoading}
         >{isLoading ? 'Sending Email' : 'Send Email'}</button>
       </form>
+      <div class="mt-3 text-center">
+      <Link to='/login' className="signin" style={{ fontSize: '13px', textDecoration: 'none' }}>
+        Sign In
+        </Link>
+      </div>
     </div>
   </div>
       </div>

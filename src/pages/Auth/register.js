@@ -55,7 +55,7 @@ const Register = () => {
         </div>
       </div>
       <div class="container d-flex align-items-center vh-100">
-    <div class="p-3 m-3">
+    <div class="p-3 m-3" style={{ width: '350px' }}>
       <h2 class="text-center mb-4">Register</h2>
       <form onSubmit={HandleSubmit}>
         <div class="mb-3">
@@ -99,8 +99,8 @@ const Register = () => {
         >{isLoading ? 'Registering...':'Register'}</button>
       </form>
       <div class="mt-3 text-center">
-      <Link to='/login' className="signin">
-        Sign In
+      <Link to='/login' className="signin" style={{ fontSize: '13px', textDecoration: 'none' }}>
+        Already a user? Sign In
         </Link>
       </div>
     </div>

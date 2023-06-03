@@ -139,3 +139,11 @@
   animation: fadeSlideUp 1s ease-in-out;
 }
 
+@media (max-width: 767px) {
+  .direction {
+    flex-direction: column;
+  }
+  .main-info{
+    height: 50%;
+  }
+}

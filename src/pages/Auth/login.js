@@ -55,15 +55,15 @@ const Login = () => {
   }
 
   return (
-    <div className='d-flex'>
-      <div className="container text-white bg-primary justify-content-center vh-100" style={{ display: "flex", flexDirection: "column", textAlign: "right" }}>
+    <div className='d-flex direction'>
+      <div className="container text-white bg-primary justify-content-center main-info vh-100" style={{ display: "flex", flexDirection: "column", textAlign: "right" }}>
         <div className="m-3">
           <h1>CloudCart</h1>
           <h4 className="cool-animation">Shop like a pro, effortlessly.</h4>
         </div>
       </div>
     <div className="container d-flex align-items-center vh-100">
-      <div className="p-3 m-3">
+      <div className="p-3 m-3" style={{ width: '350px' }}>
         <form onSubmit={HandleSubmit}>
           <div className="mb-3">
             <label for="exampleloginEmail1" className="form-label">Email address</label>
@@ -95,15 +95,17 @@ const Login = () => {
           disabled = {isLoading}
           >{isLoading ? 'Logging in...' : 'Login'}</button>
         </form>
+        <div className='d-flex justify-content-between'>
         <div className="mt-3 text-center">
-        <Link to='/register' className="singup">
-          Sign up now
+          <Link to="/register" className="signup" style={{ fontSize: '13px', textDecoration: 'none' }}>
+            Signup
           </Link>
         </div>
         <div className="mt-3 text-center">
-        <Link to='/forgotpassword' className="singup">
-          Forgot Password?
+          <Link to="/forgotpassword" className="signup" style={{ fontSize: '13px', textDecoration: 'none' }}>
+            Forgot Password?
           </Link>
+        </div>
         </div>
       </div>
     </div>
