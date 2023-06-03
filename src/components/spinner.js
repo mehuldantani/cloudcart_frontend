@@ -21,17 +21,11 @@ const Spinner = ({path = "login"}) => {
 
   return (
     <>
-    <div
-  className="d-flex flex-column justify-content-center align-items-center"
-  style={{ height: "100vh" }}>
-  <div className='mb-3'>
-  <div className="spinner-grow mx-2" role="status"></div>
-  <div className="spinner-grow mx-2" role="status"></div>
-  <div className="spinner-grow mx-2" role="status"></div>
-  </div>
-  <span className="sr-only fs-3">Authenticating . . .</span>
-</div>
-
+    <div class="d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
     </>
   )
 }

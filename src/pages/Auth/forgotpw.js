@@ -42,8 +42,15 @@ const Forgotpassword = () => {
     }
   
     return (
-  <div class="container d-flex justify-content-center align-items-center vh-100">
-    <div class="max-width-250 rounded p-5 login-container">
+      <div className='d-flex'>
+<div className="container text-white bg-primary justify-content-center vh-100" style={{ display: "flex", flexDirection: "column", textAlign: "right" }}>
+        <div className="m-3">
+          <h1>CloudCart</h1>
+          <h4 className="cool-animation">Shop like a pro, effortlessly.</h4>
+        </div>
+      </div>
+    <div class="container d-flex align-items-center vh-100">
+    <div class="p-3 m-3">
       <h2 class="text-center mb-4">Forgot Password</h2>
       <form onSubmit={HandleSubmit}>
         <div class="mb-3">
@@ -66,6 +73,7 @@ const Forgotpassword = () => {
       </form>
     </div>
   </div>
+      </div>
   
     )
   }

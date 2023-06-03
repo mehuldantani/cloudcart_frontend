@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
 * {
   margin: 0;
@@ -123,3 +124,19 @@
 .remove-icon:hover {
   transform: scale(1.1);
 }
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cool-animation {
+  animation: fadeSlideUp 1s ease-in-out;
+}
+

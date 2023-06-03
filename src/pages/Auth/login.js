@@ -55,15 +55,21 @@ const Login = () => {
   }
 
   return (
-    <div class="container d-flex justify-content-center align-items-center vh-100">
-      <div class="max-width-250 rounded p-5 login-container">
-        <h2 class="text-center mb-4">Sign In</h2>
+    <div className='d-flex'>
+      <div className="container text-white bg-primary justify-content-center vh-100" style={{ display: "flex", flexDirection: "column", textAlign: "right" }}>
+        <div className="m-3">
+          <h1>CloudCart</h1>
+          <h4 className="cool-animation">Shop like a pro, effortlessly.</h4>
+        </div>
+      </div>
+    <div className="container d-flex align-items-center vh-100">
+      <div className="p-3 m-3">
         <form onSubmit={HandleSubmit}>
-          <div class="mb-3">
-            <label for="exampleloginEmail1" class="form-label">Email address</label>
+          <div className="mb-3">
+            <label for="exampleloginEmail1" className="form-label">Email address</label>
             <input 
               type="email" 
-              class="form-control" 
+              className="form-control" 
               id="exampleloginEmail1" 
               aria-describedby="emailHelp"
               autoComplete="new-password"
@@ -72,11 +78,11 @@ const Login = () => {
               required
             />
           </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
+          <div className="mb-3">
+            <label for="exampleInputPassword1" className="form-label">Password</label>
             <input 
               type="password" 
-              class="form-control" 
+              className="form-control" 
               id="exampleInputPassword1"
               value={password}
               onChange={(e)=>{setPassword(e.target.value)}}
@@ -85,23 +91,23 @@ const Login = () => {
           </div>
           {isError && <p className='text-danger'><small>Invalid Credentials</small></p>}
           <button type="submit"
-          class="btn btn-primary w-100"
+          className="btn btn-primary w-100"
           disabled = {isLoading}
           >{isLoading ? 'Logging in...' : 'Login'}</button>
         </form>
-        <div class="mt-3 text-center">
+        <div className="mt-3 text-center">
         <Link to='/register' className="singup">
           Sign up now
           </Link>
         </div>
-        <div class="mt-3 text-center">
+        <div className="mt-3 text-center">
         <Link to='/forgotpassword' className="singup">
           Forgot Password?
           </Link>
         </div>
       </div>
     </div>
-
+    </div>
   )
 }
 
