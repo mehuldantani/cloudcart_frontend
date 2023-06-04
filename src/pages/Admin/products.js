@@ -36,10 +36,10 @@ const Products = () => {
     <Layout>
     <div className='container-fluid p-3'>
       <div className='row'>
-        <div className='col-md-3'>
+        <div className='col-md-3' style={{paddingTop:'60px'}}>
             <Adminmenu />
         </div>
-        <div className='col-md-9'>
+        <div className='col-md-9' style={{paddingTop:'60px'}}>
           <h1 className='text-center'>Products</h1>
           <div className='d-flex flex-wrap'>
           {products?.map(product => (

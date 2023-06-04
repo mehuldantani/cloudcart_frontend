@@ -68,10 +68,10 @@ const Myadminorders = () => {
     <Layout>
       <div className='container-fluid p-3'>
           <div className='row'>
-            <div className='col-md-3'>
+            <div className='col-md-3' style={{paddingTop:'60px'}}>
                 <Adminmenu />
             </div>
-            <div className="col-md-9">
+            <div className="col-md-9" style={{paddingTop:'60px'}}>
             <h3>Orders</h3>
       <table className="table table-bordered">
         <thead>

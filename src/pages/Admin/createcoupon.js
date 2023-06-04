@@ -136,10 +136,10 @@ const Createcoupon = () => {
     <Layout>
     <div className='container-fluid p-3'>
           <div className='row'>
-            <div className='col-md-3'>
+            <div className='col-md-3' style={{paddingTop:'60px'}}>
                 <Adminmenu />
             </div>
-            <div className='col-md-9'>
+            <div className='col-md-9' style={{paddingTop:'60px'}}>
             <h3>Manage Coupons</h3>
             <div className='p-3 w-50'>
               <Couponform HandleSubmit={handleSubmit} value={code} setValue={setCode} discount={discount} setDiscount={setDiscount} />

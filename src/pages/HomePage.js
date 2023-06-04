@@ -115,7 +115,7 @@ const HomePage = () => {
     <Layout>
       <div className='container-fluid p-3'>
       <div className='row'>
-        <div className='col-md-2'>
+        <div className='col-md-2' style={{paddingTop:'60px'}}>
           <h4 className='text-left'> Filters</h4>
           <div className='d-flex flex-column'>
           <h6 className='mt-4 font-weight-bold'>Categories</h6>
@@ -143,7 +143,7 @@ const HomePage = () => {
                       }}>Reset</button>
           </div>
         </div>
-        <div className='col-md-10'>
+        <div className='col-md-10' style={{paddingTop:'60px'}}>
           <h4 className='text-left'>Best of CloudCart Exclusive</h4>
           <div className='d-flex flex-wrap'>
           {products?.map(product => (

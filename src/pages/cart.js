@@ -154,7 +154,7 @@ const Cart = () => {
     <Layout>
     <div className='container-fluid p-3'>
         <div className='row'>
-            <div className='col-md-6'>
+            <div className='col-md-6' style={{paddingTop:'60px'}}>
             <b className='m-3'>{cart.length} Items in your Cart</b>
             {cart?.map((product) => (
                 <div className='row m-2  card flex-row'>
@@ -179,7 +179,7 @@ const Cart = () => {
                 </div>
             ))}
             </div>
-            <div className='col-md-6 ms-6'>
+            <div className='col-md-6 ms-6' style={{paddingTop:'60px'}}>
             <b className='m-3'>Payment and Checkout</b>
             <div className='card m-3 p-4' style={{ width: "25rem", backgroundColor: "#f7f7f7", borderRadius: "10px", boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)" }}>
     <h6 style={{ fontSize: "20px", fontWeight: "bold", marginBottom: "10px" }}>Price Details ({cart.length} items)</h6>

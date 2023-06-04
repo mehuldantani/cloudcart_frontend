@@ -11,6 +11,11 @@
 .navbar {
   box-shadow: 0 8px 6px -6px gray;
   border-bottom: 0.3px solid gray;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
 }
 
 .product-card{

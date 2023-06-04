@@ -43,41 +43,41 @@ const Forgotpassword = () => {
   
     return (
       <div className='d-flex'>
-<div className="container text-white bg-primary justify-content-center vh-100" style={{ display: "flex", flexDirection: "column", textAlign: "right" }}>
-        <div className="m-3">
-          <h1>CloudCart</h1>
-          <h4 className="cool-animation">Shop like a pro, effortlessly.</h4>
+        <div className="container text-white bg-primary justify-content-center vh-100" style={{ display: "flex", flexDirection: "column", textAlign: "right" }}>
+          <div className="m-3">
+            <h1>CloudCart</h1>
+            <h4 className="cool-animation">Shop like a pro, effortlessly.</h4>
+          </div>
+        </div>
+        <div class="container d-flex justify-content-center align-items-center vh-100">
+      <div class="p-3 m-3" style={{ width: '350px' }}>
+        <h2 class="text-center mb-4">Forgot Password</h2>
+        <form onSubmit={HandleSubmit}>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Registered Email address</label>
+            <input 
+              type="email" 
+              class="form-control" 
+              id="exampleInputEmail1" 
+              aria-describedby="emailHelp"
+              value={email}
+              onChange={(e)=>{setEmail(e.target.value)}}
+              required
+            />
+          </div>
+          {isError && <p className='text-danger'><small>User not found.</small></p>}
+          <button type="submit" 
+          class="btn btn-primary w-100"
+          disabled={isLoading}
+          >{isLoading ? (<div class="spinner-border" role="status"/>) : 'Send Email'}</button>
+        </form>
+        <div class="mt-3 text-center">
+        <Link to='/login' className="signin" style={{ fontSize: '13px', textDecoration: 'none' }}>
+          Sign In
+          </Link>
         </div>
       </div>
-    <div class="container d-flex justify-content-center align-items-center vh-100">
-    <div class="p-3 m-3" style={{ width: '350px' }}>
-      <h2 class="text-center mb-4">Forgot Password</h2>
-      <form onSubmit={HandleSubmit}>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Registered Email address</label>
-          <input 
-            type="email" 
-            class="form-control" 
-            id="exampleInputEmail1" 
-            aria-describedby="emailHelp"
-            value={email}
-            onChange={(e)=>{setEmail(e.target.value)}}
-            required
-          />
         </div>
-        {isError && <p className='text-danger'><small>User not found.</small></p>}
-        <button type="submit" 
-        class="btn btn-primary w-100"
-        disabled={isLoading}
-        >{isLoading ? (<div class="spinner-border" role="status"/>) : 'Send Email'}</button>
-      </form>
-      <div class="mt-3 text-center">
-      <Link to='/login' className="signin" style={{ fontSize: '13px', textDecoration: 'none' }}>
-        Sign In
-        </Link>
-      </div>
-    </div>
-  </div>
       </div>
   
     )

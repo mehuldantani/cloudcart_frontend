@@ -91,10 +91,10 @@ const Createproduct = () => {
     <Layout>
       <div className='container-fluid p-3'>
           <div className='row'>
-            <div className='col-md-3'>
+            <div className='col-md-3' style={{paddingTop:'60px'}}>
                 <Adminmenu />
             </div>
-            <div className='col-md-9'><h3>Create product</h3>
+            <div className='col-md-9' style={{paddingTop:'60px'}}><h3>Create product</h3>
             <div className='m-1 w-75'>
               <div className='w-25'>
                 <span>Choose a category</span>
