@@ -32,11 +32,11 @@ const Createcategory = () => {
         getAllCategories() 
       } else {
         // show error message to the user
-        toast.error("Something Went Wrong.");
+        toast.error(resp.data.message);
       }
     } catch(error){
       console.log(error)
-      toast.error("Something Went Wrong.")
+      toast.error(error.response.data.message);
     }
 
   }
@@ -60,11 +60,11 @@ const Createcategory = () => {
         setSelected(null)
       } else {
         // show error message to the user
-        toast.error("Something Went Wrong.");
+        toast.error(resp.data.message);
       }
     } catch(error){
       console.log(error)
-      toast.error("Something Went Wrong.")
+      toast.error(error.response.data.message);
     }
 
   }
@@ -80,11 +80,10 @@ const Createcategory = () => {
         getAllCategories()
       } else {
         // show error message to the user
-        toast.error("Something Went Wrong.");
+        toast.error(resp.data.message);
       }
     } catch(error){
-      console.log(error)
-      toast.error("Something Went Wrong.")
+      toast.error(error.response.data.message);
     }
 
   }

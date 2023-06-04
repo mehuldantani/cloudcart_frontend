@@ -24,7 +24,7 @@ const Createcoupon = () => {
 
     try{
       const resp = await axios.post(`${process.env.REACT_APP_BASE_URL}api/v1/coupon`,{
-        "code":code,
+        "code":code.toUpperCase(),
         "discount":discount
       });
       console.log(resp)
@@ -76,7 +76,7 @@ const Createcoupon = () => {
         setSelected(null)
       } else {
         // show error message to the user
-        toast.error("Something Went Wrong.");
+        toast.error(resp.data.message);
       }
     } catch(error){
       console.log(error)
@@ -99,11 +99,10 @@ const Createcoupon = () => {
         getAllCoupons()
       } else {
         // show error message to the user
-        toast.error("Something Went Wrong.");
+        toast.error(resp.data.message);
       }
     } catch(error){
-      console.log(error)
-      toast.error("Something Went Wrong.")
+      toast.error(error.response.data.message);
     }
 
   }
@@ -114,6 +113,9 @@ const Createcoupon = () => {
       const resp = await axios.get(`${process.env.REACT_APP_BASE_URL}api/v1/coupon`);
       if (resp.status === 200 && resp.data.success) {
         setCoupons(resp.data.coupons); // Set coupons directly without Object.entries()
+      }
+      else{
+        toast.error(resp.data.message);
       }
     } catch (error) {
       if (error.response && error.response.status === 400) {
