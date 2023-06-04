@@ -166,7 +166,7 @@ const HomePage = () => {
               <div className="card-body m-2">
                 <h6 className="card-title">{product.name.substring(0,40)}</h6>
                 <div className="card-text font-weight-bold lh-lg"><h6>₹ {product.price}</h6></div>
-                <button className="btn btn-primary" onClick={() => {
+                <button className="btn btn-primary add-to-cart-btn" onClick={() => {
                   setCart([...cart, product]);
                   localStorage.setItem('cart',JSON.stringify([...cart, product]))
                   toast.success(`${product.name} Added to Cart`);

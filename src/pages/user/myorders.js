@@ -50,7 +50,7 @@ const Myorders = () => {
       const resp = await axios.get(`${process.env.REACT_APP_BASE_URL}api/v1/order/${auth.id}`);
       console.log(resp)
       if (resp.status === 200 && resp.data.success) {
-        setOrders(resp.data)
+        setOrders(resp.data.myOrders)
       }
     } catch (error) {
       if (error.response && error.response.status === 400) {

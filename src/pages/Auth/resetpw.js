@@ -1,7 +1,6 @@
-import Layout from '../../components/layout/layout.js';
 import toast from 'react-hot-toast';
 import {React,useState} from 'react';
-import {useNavigate,useParams} from 'react-router-dom'
+import {useNavigate,useParams,Link} from 'react-router-dom'
 import axios from 'axios'
 
 const Resetpassword = () => {
@@ -86,6 +85,11 @@ const Resetpassword = () => {
         disabled={isLoading}
         >{isLoading ? (<div class="spinner-border" role="status"/>) : 'Reset Password'}</button>
       </form>
+      <div class="mt-3 text-center">
+      <Link to='/' className="signin" style={{ fontSize: '13px', textDecoration: 'none' }}>
+        Home
+        </Link>
+      </div>
     </div>
         </div>
       </div>
