@@ -152,7 +152,7 @@ const Cart = () => {
 
     return (
     <Layout>
-    <div className='container-fluid m-3 p-3'>
+    <div className='container-fluid p-3'>
         <div className='row'>
             <div className='col-md-6'>
             <b className='m-3'>{cart.length} Items in your Cart</b>

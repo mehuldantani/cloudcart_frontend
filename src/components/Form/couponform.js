@@ -22,7 +22,7 @@ const Couponform = ({HandleSubmit,value,setValue,discount,setDiscount}) => {
             value={discount}
             style={{width:"300px"}}
             onChange={(e) =>{
-              setDiscount(Math.max(0, Math.min(e.target.value, 100)));
+              setDiscount(Math.max(0, Math.min(e.target.value, 90)));
               }}
 
             />

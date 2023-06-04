@@ -113,7 +113,7 @@ const HomePage = () => {
 
   return (
     <Layout>
-      <div className='container-fluid m-3 p-3'>
+      <div className='container-fluid p-3'>
       <div className='row'>
         <div className='col-md-2'>
           <h4 className='text-left'> Filters</h4>
@@ -139,8 +139,7 @@ const HomePage = () => {
             <button 
             className='btn btn-dark'
             onClick={()=>{
-                        setCheceked([])
-                        setRadio([])
+              window.location.reload()
                       }}>Reset</button>
           </div>
         </div>
