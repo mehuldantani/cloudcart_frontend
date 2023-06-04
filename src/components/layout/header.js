@@ -62,11 +62,6 @@ const Header = () => {
       </button>
       <div className="collapse navbar-collapse" id="navbarText">
         <ul className="navbar-nav ms-auto">
-          <li className="nav-item">
-            <NavLink to="/asd" className="nav-link navbar-custom">
-              Categories
-            </NavLink>
-          </li>
           <li className="nav-item dropdown">
               <NavLink
                 className="nav-link dropdown-toggle"

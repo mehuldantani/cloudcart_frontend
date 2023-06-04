@@ -116,18 +116,18 @@ const HomePage = () => {
       <div className='container-fluid m-3 p-3'>
       <div className='row'>
         <div className='col-md-2'>
-          <h6 className='text-left'> Filters</h6>
+          <h4 className='text-left'> Filters</h4>
           <div className='d-flex flex-column'>
           <h6 className='mt-4 font-weight-bold'>Categories</h6>
           {categories?.map((c) => (
-            <Checkbox key={c._id} onChange={(e)=>{handleFilter(e.target.checked,c._id)}}>
+            <Checkbox className='ms-3' key={c._id} onChange={(e)=>{handleFilter(e.target.checked,c._id)}}>
                 {c.name}
             </Checkbox>
           ))}
           </div>
           <div className='d-flex flex-column'>
           <h6 className='mt-4 font-weight-bold'>Prices</h6>
-          <Radio.Group onChange={(e) =>{setRadio(e.target.value)}}>
+          <Radio.Group className='ms-3' onChange={(e) =>{setRadio(e.target.value)}}>
           {prices?.map((c) => (
             <div key={c._id}>
               <Radio value={c.array}>{c.name}</Radio>
@@ -135,13 +135,10 @@ const HomePage = () => {
           ))}
           </Radio.Group>
           </div>
-          <div className='d-flex flex-column m-2 float-right'>
-            <button style={{
-              backgroundColor: "transparent",
-              color: "black",
-              border: "1px solid gray",
-              width: 70
-            }} onClick={()=>{
+          <div className='d-flex justify-content-center m-4 float-right'>
+            <button 
+            className='btn btn-dark'
+            onClick={()=>{
                         setCheceked([])
                         setRadio([])
                       }}>Reset</button>
@@ -151,10 +148,10 @@ const HomePage = () => {
           <h4 className='text-left'>Best of CloudCart Exclusive</h4>
           <div className='d-flex flex-wrap'>
           {products?.map(product => (
-            <div className="card m-2 zoom-image" style={{ width: "15rem" }}>
+            <div className="card zoom-image" style={{ width: "15rem" }}>
               {product.photos && product.photos.length > 0 ? (
                 <img
-                  className="card-img-top m-4 zoom-image"
+                  className="card-img-top m-4"
                   src={product.photos[0].secure_url}
                   alt={product.name}
                   style={{ width: "80%", height: "200px" }}
@@ -167,10 +164,9 @@ const HomePage = () => {
                   style={{ width: "80%", height: "200px" }}
                 />
               )}
-              <div className="card-body">
-                <h5 className="card-title"><strong>{product.name}</strong></h5>
-                <p className="card-text">{product.description.substring(0,100)}</p>
-                <div className="card-text font-weight-bold"><h6>Rs. {product.price}</h6></div>
+              <div className="card-body m-2">
+                <h6 className="card-title">{product.name.substring(0,40)}</h6>
+                <div className="card-text font-weight-bold lh-lg"><h6>₹ {product.price}</h6></div>
                 <button className="btn btn-primary" onClick={() => {
                   setCart([...cart, product]);
                   localStorage.setItem('cart',JSON.stringify([...cart, product]))

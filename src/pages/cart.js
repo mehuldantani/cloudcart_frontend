@@ -71,6 +71,7 @@ const Cart = () => {
             );
             if (resp.status === 200 && resp.data.success) {
               //oepn razorpayid
+              console.log(resp)
               handleOpenRazorpay(resp.data.order.id);
               toast.success(`Order Created successfully`);
               
@@ -79,7 +80,7 @@ const Cart = () => {
               toast.error("Something Went Wrong.");
             }
           } catch(error){
-            toast.error("Something Went Wrong.")
+            toast.error(error.response.data.message);
           }
     }
 
@@ -172,13 +173,13 @@ const Cart = () => {
                             &times;
                         </span>
                     </div>
-                    <h6 className=''>{product.description.substring(0,30)}</h6>
+                    <h6 className=''>{product.description.substring(0,50)}</h6>
                     <h4 className='mt-6'>Rs. {product.price}</h4>
                     </div>
                 </div>
             ))}
             </div>
-            <div className='col-md-6'>
+            <div className='col-md-6 ms-6'>
             <b className='m-3'>Payment and Checkout</b>
             <div className='card m-3 p-4' style={{ width: "25rem", backgroundColor: "#f7f7f7", borderRadius: "10px", boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)" }}>
     <h6 style={{ fontSize: "20px", fontWeight: "bold", marginBottom: "10px" }}>Price Details ({cart.length} items)</h6>
@@ -206,7 +207,7 @@ const Cart = () => {
         <h6 style={{ fontSize: "18px", fontWeight: "bold", marginBottom: "0" }}>Total Amount:</h6>
         <span style={{ fontSize: "18px", marginLeft: "10px" }}><b>Rs. {Math.floor(totalmrp - coupondiscount*totalmrp)}</b></span>
     </div>
-    <button className='btn btn-primary' style={{ borderRadius: "5px", padding: "10px 20px", fontSize: "16px", fontWeight: "bold" }} onClick={handlePayment}>Pay Now</button>
+    <button className='btn btn-success' style={{ borderRadius: "5px", padding: "10px 20px", fontSize: "16px", fontWeight: "bold" }} onClick={handlePayment}>Pay Now</button>
 </div>
 
             </div>

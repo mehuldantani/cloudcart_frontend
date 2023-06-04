@@ -13,6 +13,10 @@
   border-bottom: 0.3px solid gray;
 }
 
+.product-card{
+  box-shadow: 2px 2px 8px gray;
+}
+
 .navbar-custom {
   color: white;
 }
@@ -135,9 +139,25 @@
   }
 }
 
+@keyframes fadeSlideSide {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .cool-animation {
   animation: fadeSlideUp 1s ease-in-out;
 }
+
+.x-animation {
+  animation: fadeSlideSide 1s ease-in-out;
+}
+
 
 @media (max-width: 767px) {
   .direction {
