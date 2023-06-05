@@ -20,7 +20,7 @@ export default function AdminRoute(){
                     setOk(false)
                 }
             } catch (error) {
-                console.log(error)
+                
                 // show error message to the user
                 toast.error("Something went wrong");
             }

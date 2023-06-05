@@ -48,7 +48,7 @@ const Myorders = () => {
    const getAllorders = async () => {
     try {
       const resp = await axios.get(`${process.env.REACT_APP_BASE_URL}api/v1/order/${auth.id}`);
-      console.log(resp)
+      
       if (resp.status === 200 && resp.data.success) {
         setOrders(resp.data.myOrders)
       }
@@ -57,7 +57,7 @@ const Myorders = () => {
         toast.error(error.response.data.message);
       } else {
         // handle other errors
-        console.log(error);
+        
         toast.error('Something Went Wrong.');
       }
     }

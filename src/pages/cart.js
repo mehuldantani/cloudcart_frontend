@@ -71,7 +71,7 @@ const Cart = () => {
             );
             if (resp.status === 200 && resp.data.success) {
               //oepn razorpayid
-              console.log(resp)
+              
               handleOpenRazorpay(resp.data.order.id);
               toast.success(`Order Created successfully`);
               
@@ -137,10 +137,10 @@ const Cart = () => {
         if (error.response) {
           // handle error response with status code 400
           toast.error(error.response.data.message);
-          console.log(error.response.data.message)
+          
         } else {
           // handle other errors
-          console.log(error);
+          
           toast.error('Something Went Wrong.');
         }
       }

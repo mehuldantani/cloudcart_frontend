@@ -34,7 +34,7 @@ const Createproduct = () => {
         toast.error(error.response.data.message);
       } else {
         // handle other errors
-        console.log(error);
+        
         toast.error('Something Went Wrong.');
       }
     }
@@ -56,7 +56,7 @@ const Createproduct = () => {
       newproduct.append('files',photos)
 
       const resp = await axios.post(`${process.env.REACT_APP_BASE_URL}api/v1/product`,newproduct);
-      console.log(resp)
+      
       if (resp.status === 200 && resp.data.success) {
         
         toast.success(`${name} Added Successfully`);
@@ -77,7 +77,7 @@ const Createproduct = () => {
         toast.error(error.response.data.message);
       } else {
         // handle other errors
-        console.log(error);
+        
         toast.error('Something Went Wrong.');
       }
     }

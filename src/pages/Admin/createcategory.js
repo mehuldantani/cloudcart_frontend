@@ -35,7 +35,7 @@ const Createcategory = () => {
         toast.error(resp.data.message);
       }
     } catch(error){
-      console.log(error)
+      
       toast.error(error.response.data.message);
     }
 
@@ -63,7 +63,7 @@ const Createcategory = () => {
         toast.error(resp.data.message);
       }
     } catch(error){
-      console.log(error)
+      
       toast.error(error.response.data.message);
     }
 
@@ -93,8 +93,8 @@ const Createcategory = () => {
       const resp = await axios.get(`${process.env.REACT_APP_BASE_URL}api/v1/collection`);
 
       if (resp.status === 200 && resp.data.success) {
-        console.log('req is true');
-        console.log(resp.data.allCollections);
+        
+        
         setCategories(resp.data.allCollections); // Set categories directly without Object.entries()
       }
     } catch (error) {
@@ -103,7 +103,7 @@ const Createcategory = () => {
         toast.error(error.response.data.message);
       } else {
         // handle other errors
-        console.log(error);
+        
         toast.error('Something Went Wrong.');
       }
     }

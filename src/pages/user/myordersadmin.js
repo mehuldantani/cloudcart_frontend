@@ -54,7 +54,7 @@ const Myadminorders = () => {
         toast.error(error.response.data.message);
       } else {
         // handle other errors
-        console.log(error);
+        
         toast.error('Something Went Wrong.');
       }
     }

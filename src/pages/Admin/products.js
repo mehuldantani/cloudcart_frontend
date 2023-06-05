@@ -14,7 +14,7 @@ const Products = () => {
 
       if (resp.status === 200 && resp.data?.success) {
         setProducts(resp.data.products); // Set categories directly without Object.entries()
-        console.log(products)
+        
       }
     } catch (error) {
       if (error.response) {
@@ -22,7 +22,7 @@ const Products = () => {
         toast.error(error.response.data.message);
       } else {
         // handle other errors
-        console.log(error);
+        
         toast.error('Something Went Wrong.');
       }
     }

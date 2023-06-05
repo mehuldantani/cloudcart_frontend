@@ -27,7 +27,7 @@ const Login = () => {
         "password": password
       }
       );
-      console.log(resp)
+      
       if (resp.status === 200 && resp.data.success) {
         setAuth({
           ...auth,

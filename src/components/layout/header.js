@@ -16,7 +16,7 @@ const Header = () => {
     e.preventDefault()
       try{
         const resp = await axios.get(`${process.env.REACT_APP_BASE_URL}api/v1/auth/logout`,null);
-        console.log(resp)
+        
         if (resp.status === 200 && resp.data.success) {
           // show success message to the user
           //navigate('/contact')
@@ -26,7 +26,7 @@ const Header = () => {
           toast.error("Something Went Wrong.");
         }
       } catch(error){
-        console.log(error)
+        
         toast.error("Something Went Wrong.")
       }
 

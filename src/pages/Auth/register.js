@@ -27,7 +27,7 @@ const Register = () => {
             "password": password
         }
         );
-        console.log(resp)
+        
         if (resp.status === 200 && resp.data.success) {
           // show success message to the user
           navigate('/login')

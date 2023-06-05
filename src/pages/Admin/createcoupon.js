@@ -27,7 +27,7 @@ const Createcoupon = () => {
         "code":code.toUpperCase(),
         "discount":discount
       });
-      console.log(resp)
+      
 
       if (resp.status === 200 && resp.data.success) {
         
@@ -45,7 +45,7 @@ const Createcoupon = () => {
         toast.error(error.response.data.message);
       } else {
         // handle other errors
-        console.log(error);
+        
         toast.error("Something Went Wrong.");
       }
     }
@@ -62,7 +62,7 @@ const Createcoupon = () => {
         "discount":updateddiscount
     });
 
-    console.log(resp)
+    
 
       if (resp.status === 200 && resp.data.success) {
         
@@ -79,7 +79,7 @@ const Createcoupon = () => {
         toast.error(resp.data.message);
       }
     } catch(error){
-      console.log(error)
+      
       toast.error("Something Went Wrong.")
     }
 
@@ -123,7 +123,7 @@ const Createcoupon = () => {
         toast.error(error.response.data.message);
       } else {
         // handle other errors
-        console.log(error);
+        
         toast.error('Something Went Wrong.');
       }
     }
