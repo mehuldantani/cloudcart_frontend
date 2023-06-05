@@ -83,7 +83,7 @@ const Products = () => {
                 <div className='d-flex justify-content-between'>
                 <div className="card-text font-weight-bold"><strong>Rs. {product.price}</strong></div>
                   <div className="ml-auto">
-                    <FontAwesomeIcon className='margin-auto' style={{color:'red',fontSize:'20px'}} icon={faTrashCan} onClick={()=>{handleDelete(product._id)}} />
+                    <FontAwesomeIcon className='margin-auto' style={{cursor: 'pointer',color:'red',fontSize:'20px'}} icon={faTrashCan} onClick={()=>{handleDelete(product._id)}} />
                   </div>
               </div>
               </div>

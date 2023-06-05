@@ -34,7 +34,7 @@ const HomePage = () => {
   const getallproducts = async ()=>{
     try {
       const resp = await axios.get(`${process.env.REACT_APP_BASE_URL}api/v1/product`);
-      
+      console.log('called all product')
       if (resp.status === 200 && resp.data?.success) {
         setProducts(resp.data.products); // Set categories directly without Object.entries()
       }
@@ -44,7 +44,7 @@ const HomePage = () => {
         toast.error(error.response.data.message);
       } else {
         // handle other errors
-        
+        console.log(error);
         toast.error('Something Went Wrong.');
       }
     }
@@ -64,7 +64,7 @@ const HomePage = () => {
         toast.error(error.response.data.message);
       } else {
         // handle other errors
-        
+        console.log(error);
         toast.error('Something Went Wrong.');
       }
     }
@@ -90,11 +90,11 @@ const HomePage = () => {
       };
 
     try {
-      
+      console.log(args)
       const resp = await axios.post(`${process.env.REACT_APP_BASE_URL}api/v1/product/filter-products`,args);
 
       if (resp.status === 200 && resp.data?.success) {
-        
+        console.log('filtered',resp.data.products)
         setProducts(resp.data.products); // Set categories directly without Object.entries()
         
       }
@@ -105,7 +105,7 @@ const HomePage = () => {
         toast.error(error.response.data.message);
       } else {
         // handle other errors
-        
+        console.log(error);
         toast.error('Something Went Wrong.');
       }
     }
