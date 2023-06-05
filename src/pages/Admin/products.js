@@ -1,6 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import Layout from '../../components/layout/layout.js'
 import Adminmenu from '../../components/layout/adminmenu.js'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPenToSquare ,faTrashCan} from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios'
 import {toast} from 'react-hot-toast'
 
@@ -25,6 +27,22 @@ const Products = () => {
         
         toast.error('Something Went Wrong.');
       }
+    }
+  };
+
+  const handleDelete = async (productid)=>{
+    try{
+      const resp = await axios.delete(`${process.env.REACT_APP_BASE_URL}api/v1/product/${productid}`);
+
+      if (resp.status === 200 && resp.data.success) {
+        toast.success("Deleted Successfully");
+        getallproducts()
+      } else {
+        // show error message to the user
+        toast.error(resp.data.message);
+      }
+    } catch(error){
+      toast.error(error.response.data.message);
     }
   };
 
@@ -61,8 +79,13 @@ const Products = () => {
               )}
               <div className="card-body">
                 <h5 className="card-title">{product.name}</h5>
-                <p className="card-text">{product.description}</p>
+                <p className="card-text">{product.description.substring(0,20)}</p>
+                <div className='d-flex justify-content-between'>
                 <div className="card-text font-weight-bold"><strong>Rs. {product.price}</strong></div>
+                  <div className="ml-auto">
+                    <FontAwesomeIcon className='margin-auto' style={{color:'red',fontSize:'20px'}} icon={faTrashCan} onClick={()=>{handleDelete(product._id)}} />
+                  </div>
+              </div>
               </div>
             </div>
           ))}

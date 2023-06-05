@@ -159,10 +159,10 @@ const Createcoupon = () => {
                     <tr key={c._id}>
                     <td>{c.code}</td>
                     <td>{c.discount} %</td>
-                    <td><FontAwesomeIcon icon={faPenToSquare} onClick={() => {
+                    <td><FontAwesomeIcon icon={faPenToSquare} style={{color:'green',fontSize:'18px'}} onClick={() => {
                       setVisible(true); setUpdatedcode(c.code); setUpdateddiscount(c.discount); setSelected(c)}
                       } /></td>
-                    <td><FontAwesomeIcon icon={faTrashCan} onClick={()=>{handleDelete(c._id)}} /></td>
+                    <td><FontAwesomeIcon icon={faTrashCan} style={{color:'red',fontSize:'18px'}}  onClick={()=>{handleDelete(c._id)}} /></td>
                   </tr>
                   ))}
                 </tbody>
