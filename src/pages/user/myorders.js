@@ -101,16 +101,30 @@ const Myorders = () => {
               <TableRow
                 key={index}
                 rowIndex={index}
-                name={order.paymentMode}
+                name={order.user.name}
                 amount={order.amount}
                 date={createdAtIST}
                 status={order.status}
                 expanded={isRowExpanded(index)}
                 onClick={handleRowClick}
               >
-              <span>
-                Coupon: {order.coupon}
-              </span>
+              <h5>Coupon: {order.coupon}</h5>
+              {order.products.map((product)=>(
+                <div className='row m-2 card flex-row'>``
+                <div className='col-md-4'>
+                  <img
+                    className="img rounded img-responsive m-1"
+                    src={product.productid.photos[0].secure_url}
+                    style={{ height: "120px" }}
+                  />
+                </div>
+                <div className='col-md-8 mt-2'>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <b>{product.productid.name}</b>
+                  </div>
+                </div>
+              </div>
+              ))}
               </TableRow>
             );
           })}

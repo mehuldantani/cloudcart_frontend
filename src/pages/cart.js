@@ -157,13 +157,13 @@ const Cart = () => {
             <div className='col-md-6' style={{paddingTop:'60px'}}>
             <b className='m-3'>{cart.length} Items in your Cart</b>
             {cart?.map((product) => (
-                <div className='row m-2  card flex-row'>
+                <div className='row m-2 card flex-row'>
                     <div className='col-md-4'>
                     <img
-                        className="card-img-top m-4 zoom-image"
+                        className="img rounded  img-responsive m-1"
                         src={product.photos[0].secure_url}
                         alt={product.name}
-                        style={{ width: "100px", height: "100px" }}
+                        style={{height: "120px" }}
                         />
                     </div>
                     <div className='col-md-8 mt-2'>
