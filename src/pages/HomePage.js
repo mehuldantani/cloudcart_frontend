@@ -147,25 +147,29 @@ const HomePage = () => {
           <h4 className='text-left'>Best of CloudCart Exclusive</h4>
           <div className='d-flex flex-wrap'>
           {products?.map(product => (
-            <div className="card zoom-image" style={{ width: "15rem" }}>
+            <div className="m-2 rounded zoom-image" style={{ width: "13rem" }}>
               {product.photos && product.photos.length > 0 ? (
-                <img
-                  className="card-img-top m-4"
+                <div style={{ display: "flex", justifyContent: "center"}}>
+                  <img 
+                  className="img rounded  img-responsive m-1"
                   src={product.photos[0].secure_url}
                   alt={product.name}
-                  style={{ width: "80%", height: "200px" }}
+                  style={{height: "200px" }}
                 />
+                </div>
               ) : (
-                <img
-                  className="card-img-top m-4"
+                <div style={{ display: "flex", justifyContent: "center"}}>
+                  <img
+                  className="img img-responsive"
                   src='https://cloud-cart.s3.ap-south-1.amazonaws.com/products/6471f1fe66f3b36622234f30/photo_1.png'
                   alt='No Image'
-                  style={{ width: "80%", height: "200px" }}
+                  style={{height: "200px" }}
                 />
+                </div>
               )}
               <div className="card-body m-2">
                 <h6 className="card-title">{product.name.substring(0,40)}</h6>
-                <div className="card-text font-weight-bold lh-lg"><h6>₹ {product.price}</h6></div>
+                <div className="card-text font-weight-bold lh-lg"><strong>Rs. {product.price}</strong></div>
                 <button className="btn btn-primary add-to-cart-btn" onClick={() => {
                   setCart([...cart, product]);
                   localStorage.setItem('cart',JSON.stringify([...cart, product]))

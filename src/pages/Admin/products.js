@@ -58,28 +58,32 @@ const Products = () => {
             <Adminmenu />
         </div>
         <div className='col-md-9' style={{paddingTop:'60px'}}>
-          <h1 className='text-center'>Products</h1>
+          <h1 className='text-center'>Products Catalogue</h1>
           <div className='d-flex flex-wrap'>
           {products?.map(product => (
-            <div className="card zoom-image" style={{ width: "15rem" }}>
+            <div className="m-2 rounded zoom-image" style={{ width: "13rem" }}>
               {product.photos && product.photos.length > 0 ? (
-                <img
-                  className="card-img-top m-4"
+                <div style={{ display: "flex", justifyContent: "center"}}>
+                  <img
+                  className="img rounded  img-responsive m-1"
                   src={product.photos[0].secure_url}
                   alt={product.name}
-                  style={{ width: "80%", height: "200px" }}
+                  style={{height: "200px" }}
                 />
+                </div>
               ) : (
-                <img
-                  className="card-img-top m-4"
+                <div style={{ display: "flex", justifyContent: "center"}}>
+                  <img
+                  className="img rounded  img-responsive m-1"
                   src='https://cloud-cart.s3.ap-south-1.amazonaws.com/products/6471f1fe66f3b36622234f30/photo_1.png'
                   alt='No Image'
-                  style={{ width: "80%", height: "200px" }}
+                  style={{height: "200px" }}
                 />
+                </div>
               )}
-              <div className="card-body">
-                <h5 className="card-title">{product.name}</h5>
-                <p className="card-text">{product.description.substring(0,20)}</p>
+              <div className="card-body m-2">
+                <h6 className="card-title">{product.name}</h6>
+                <p className="card-text font-weight-bold lh-lg">{product.description.substring(0,20)}</p>
                 <div className='d-flex justify-content-between'>
                 <div className="card-text font-weight-bold"><strong>Rs. {product.price}</strong></div>
                   <div className="ml-auto">
