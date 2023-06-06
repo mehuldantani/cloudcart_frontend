@@ -147,14 +147,13 @@ const HomePage = () => {
           <h4 className='text-left'>Best of CloudCart Exclusive</h4>
           <div className='d-flex flex-wrap'>
           {products?.map(product => (
-            <div className="m-2 rounded zoom-image" style={{ width: "13rem" }}>
+            <div className="m-2 rounded zoom-image product-card" >
               {product.photos && product.photos.length > 0 ? (
                 <div style={{ display: "flex", justifyContent: "center"}}>
                   <img 
                   className="img rounded  img-responsive m-1"
                   src={product.photos[0].secure_url}
                   alt={product.name}
-                  style={{height: "200px" }}
                 />
                 </div>
               ) : (
@@ -163,7 +162,6 @@ const HomePage = () => {
                   className="img img-responsive"
                   src='https://cloud-cart.s3.ap-south-1.amazonaws.com/products/6471f1fe66f3b36622234f30/photo_1.png'
                   alt='No Image'
-                  style={{height: "200px" }}
                 />
                 </div>
               )}

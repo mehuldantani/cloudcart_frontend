@@ -110,6 +110,14 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15)
 }
 
+.product-card {
+  width: 13rem;
+}
+
+.product-card img{
+  height: 200px;
+}
+
 .zoom-image:hover {
   transform: scale(1.02);
   
@@ -165,12 +173,12 @@
   animation: fadeSlideSide 1s ease-in-out;
 }
 
-
-@media (max-width: 767px) {
-  .direction {
-    flex-direction: column;
+@media (max-width: 576px) { /* Adjust the breakpoint as needed */
+  .product-card {
+    width: 9rem;
   }
-  .main-info{
-    height: 50%;
+
+  .product-card img{
+    height: 100px;
   }
 }
