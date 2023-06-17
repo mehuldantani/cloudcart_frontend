@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .navbar {
@@ -18,7 +18,7 @@
   z-index: 999;
 }
 
-.product-card{
+.product-card {
   box-shadow: 2px 2px 8px gray;
 }
 
@@ -107,20 +107,19 @@
 
 .zoom-image {
   transition: transform 0.3s ease-in-out;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15)
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
 .product-card {
   width: 13rem;
 }
 
-.product-card img{
+.product-card img {
   height: 200px;
 }
 
 .zoom-image:hover {
   transform: scale(1.02);
-  
 }
 
 .cart-badge {
@@ -173,12 +172,13 @@
   animation: fadeSlideSide 1s ease-in-out;
 }
 
-@media (max-width: 576px) { /* Adjust the breakpoint as needed */
+@media (max-width: 576px) {
+  /* Adjust the breakpoint as needed */
   .product-card {
     width: 9rem;
   }
 
-  .product-card img{
+  .product-card img {
     height: 100px;
   }
 }
