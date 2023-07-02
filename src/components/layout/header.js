@@ -44,25 +44,25 @@ const Header = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-primary">
-        <div className="brand ">
+      <nav className="navbar navbar-expand-lg navbar-light bg-primary d-flex justify-content-between">
+        <div className="brand">
           <Link to="/" className="navbar-brand navbar-custom">
             <HiShoppingCart style={{ fontSize: "40px", color: "white" }} />{" "}
             CloudCart
           </Link>
         </div>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarText"
-          aria-controls="navbarText"
-          aria-expanded="true"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="collapse navbar-collapse" id="navbarText">
+        <div className="d-flex w-50 justify-content-center">
+          <div style={{width:"450px"}}>
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search Products"
+            aria-label="Search"
+          />
+          </div>
+        </div>
+        <div>
+          <div className="collapse navbar-collapse d-flex" id="navbarText">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item dropdown">
               <NavLink
@@ -106,6 +106,7 @@ const Header = () => {
               </NavLink>
             </li>
           </ul>
+        </div>
         </div>
       </nav>
     </>
